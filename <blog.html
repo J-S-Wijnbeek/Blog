@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristisch CreatieLab - Innovatie voor Iedereen</title>
+    <style>
+        /* Reset en basis styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header met holografisch effect */
+        .header {
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+            background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+            margin-bottom: 40px;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 0, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 0, 0.2) 0%, transparent 50%);
+            animation: hologram 4s ease-in-out infinite alternate;
+            z-index: -1;
+        }
+
+        @keyframes hologram {
+            0% { opacity: 0.7; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .main-title {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 3s ease-in-out infinite;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        @keyframes rainbow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .subtitle {
+            font-size: 1.4em;
+            color: #00ffff;
+            margin-bottom: 40px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+        }
+
+        /* Lab sections */
+        .lab-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .tech-card {
+            background: linear-gradient(145deg, rgba(26, 26, 46, 0.8) 0%, rgba(22, 33, 62, 0.8) 100%);
+            border: 2px solid transparent;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00);
+            background-size: 400% 400%;
+            border-radius: 20px;
+            z-index: -1;
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .tech-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 255, 255, 0.3);
+        }
+
+        .tech-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #00ffff;
+            text-shadow: 0 0 20px currentColor;
+        }
+
+        .tech-title {
+            font-size: 1.8em;
+            color: #ff00ff;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .tech-description {
+            color: #cccccc;
+            line-height: 1.6;
+            font-size: 1.1em;
+        }
+
+        /* Collaboration section */
+        .collaboration {
+            text-align: center;
+            padding: 80px 0;
+            background: radial-gradient(ellipse at center, rgba(255, 0, 255, 0.1) 0%, transparent 70%);
+            margin: 60px 0;
+            border-radius: 30px;
+            position: relative;
+        }
+
+        .collaboration::before {
+            content: '🤖';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15em;
+            opacity: 0.1;
+            z-index: -1;
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .collab-title {
+            font-size: 2.5em;
+            color: #ffff00;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px currentColor;
+        }
+
+        .collab-text {
+            font-size: 1.3em;
+            color: #ffffff;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Features grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 60px 0;
+        }
+
+        .feature-item {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(0, 255, 255, 0.2);
+            border-color: rgba(0, 255, 255, 0.6);
+            transform: translateY(-5px);
+        }
+
+        .feature-emoji {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-text {
+            color: #ffffff;
+            font-size: 1.1em;
+        }
+
+        /* Call to action */
+        .cta {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(45deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
+            border-radius: 25px;
+            margin: 60px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff00ff, #00ffff);
+            color: #000;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.7);
+        }
+
+        /* Floating elements */
+        .floating-element {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(odd) {
+            animation-delay: -3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float-1 {
+            top: 10%;
+            left: 5%;
+            font-size: 2em;
+            color: #00ffff;
+            opacity: 0.7;
+        }
+
+        .float-2 {
+            top: 20%;
+            right: 10%;
+            font-size: 1.5em;
+            color: #ff00ff;
+            opacity: 0.6;
+        }
+
+        .float-3 {
+            bottom: 30%;
+            left: 8%;
+            font-size: 2.5em;
+            color: #ffff00;
+            opacity: 0.5;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5em;
+                letter-spacing: 1px;
+            }
+            
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .tech-card {
+                padding: 20px;
+            }
+            
+            .floating-element {
+                display: none;
+            }
+            
+            .collab-title {
+                font-size: 1.8em;
+            }
+        }
+
+        /* Scrolling animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating decorative elements -->
+    <div class="floating-element float-1" aria-hidden="true">🔬</div>
+    <div class="floating-element float-2" aria-hidden="true">🚀</div>
+    <div class="floating-element float-3" aria-hidden="true">⚡</div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="main-title">FUTURISTISCH CREATIELAB</h1>
+            <p class="subtitle">Waar Innovatie en Samenwerking de Toekomst Vormgeven</p>
+        </header>
+
+        <!-- Technology showcase -->
+        <section class="lab-section reveal">
+            <div class="tech-card">
+                <div class="tech-icon">🖨️</div>
+                <h3 class="tech-title">3D Printing Lab</h3>
+                <p class="tech-description">Van digitaal ontwerp tot fysiek prototype in minuten. Onze geavanceerde 3D-printers maken elk idee werkelijkheid.</p>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-icon">⚡</div>
+                <h3 class="tech-title">Laser Cutting</h3>
+                <p class="tech-description">Precisie-gereedschap voor het snijden en graveren van materialen. Perfecte afwerking voor elk project.</p>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-icon">🤖</div>
+                <h3 class="tech-title">Robotica Workshop</h3>
+                <p class="tech-description">Programmeer en bouw robots die je dagelijkse leven verbeteren. Van simpel tot geavanceerd.</p>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-icon">🔮</div>
+                <h3 class="tech-title">Hologram Studio</h3>
+                <p class="tech-description">Visualiseer ideeën in 3D holografische projecties. Maak concepten letterlijk zichtbaar.</p>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-icon">🥽</div>
+                <h3 class="tech-title">AR/VR Experience</h3>
+                <p class="tech-description">Duik in virtuele werelden of voeg digitale elementen toe aan de realiteit.</p>
+            </div>
+            
+            <div class="tech-card">
+                <div class="tech-icon">🧠</div>
+                <h3 class="tech-title">AI Assistenten</h3>
+                <p class="tech-description">Intelligente helpers die je design-proces optimaliseren en nieuwe mogelijkheden suggereren.</p>
+            </div>
+        </section>
+
+        <!-- Collaboration section -->
+        <section class="collaboration reveal">
+            <h2 class="collab-title">Samenwerking is de Sleutel</h2>
+            <p class="collab-text">
+                In ons lab werken mensen van alle leeftijden en achtergronden samen. Van jonge makers tot ervaren ingenieurs, 
+                van kunstenaars tot programmeurs. Samen creëren we de innovaties van morgen. Fouten maken mag hier - 
+                het is onderdeel van het leerproces en de weg naar doorbraken.
+            </p>
+        </section>
+
+        <!-- Features -->
+        <section class="features-grid reveal">
+            <div class="feature-item">
+                <span class="feature-emoji">💡</span>
+                <p class="feature-text">Ideeën worden werkelijkheid</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-emoji">👥</span>
+                <p class="feature-text">Diverse teamsamenstelling</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-emoji">⚡</span>
+                <p class="feature-text">Snelle prototyping</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-emoji">🎨</span>
+                <p class="feature-text">Creatieve vrijheid</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-emoji">🔬</span>
+                <p class="feature-text">Experimenteren aangemoedigd</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-emoji">🌟</span>
+                <p class="feature-text">Inspirerende omgeving</p>
+            </div>
+        </section>
+
+        <!-- Process flow -->
+        <section class="reveal">
+            <div style="text-align: center; padding: 60px 0;">
+                <h2 style="font-size: 2.5em; color: #00ffff; margin-bottom: 40px;">Van Schets tot Prototype</h2>
+                <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 30px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 4em; margin-bottom: 10px;">✏️</div>
+                        <p style="color: #ffffff; font-size: 1.2em;">Schets</p>
+                    </div>
+                    <div style="color: #ff00ff; font-size: 2em;">→</div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 4em; margin-bottom: 10px;">💻</div>
+                        <p style="color: #ffffff; font-size: 1.2em;">Digitaal Design</p>
+                    </div>
+                    <div style="color: #ff00ff; font-size: 2em;">→</div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 4em; margin-bottom: 10px;">🔮</div>
+                        <p style="color: #ffffff; font-size: 1.2em;">Hologram Test</p>
+                    </div>
+                    <div style="color: #ff00ff; font-size: 2em;">→</div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 4em; margin-bottom: 10px;">🏗️</div>
+                        <p style="color: #ffffff; font-size: 1.2em;">Prototype</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action -->
+        <section class="cta reveal">
+            <h2 style="font-size: 2.5em; color: #ffffff; margin-bottom: 30px;">Klaar om de Toekomst te Creëren?</h2>
+            <p style="font-size: 1.3em; color: #cccccc; margin-bottom: 40px;">
+                Word onderdeel van onze innovatieve community en breng je wildste ideeën tot leven!
+            </p>
+            <a href="#" class="cta-button">Start je Project Nu</a>
+        </section>
+    </div>
+
+    <script>
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add some interactive effects
+        document.querySelectorAll('.tech-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02) rotateY(5deg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
+            });
+        });
+
+        // Holographic text effect with optimized performance
+        let lastHologramUpdate = 0;
+        setInterval(() => {
+            const now = Date.now();
+            if (now - lastHologramUpdate > 2000) {
+                const title = document.querySelector('.main-title');
+                if (title) {
+                    title.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+                }
+                lastHologramUpdate = now;
+            }
+        }, 2000);
+
+        // Interactive effects for feature items
+        document.querySelectorAll('.feature-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.05)';
+                this.style.boxShadow = '0 15px 30px rgba(0, 255, 255, 0.4)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Dynamic floating particles
+        function createFloatingParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '3px';
+            particle.style.height = '3px';
+            particle.style.backgroundColor = `rgba(${Math.random() * 255}, ${Math.random() * 255}, 255, 0.7)`;
+            particle.style.borderRadius = '50%';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '-1';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px)', opacity: 1 },
+                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
+            ], {
+                duration: 3000 + Math.random() * 2000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        }
+
+        // Create floating particles periodically
+        setInterval(createFloatingParticle, 500);
+
+        // CTA button effect
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create ripple effect
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.style.position = 'absolute';
+            ripple.style.borderRadius = '50%';
+            ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+            ripple.style.transform = 'scale(0)';
+            ripple.style.animation = 'ripple 0.6s linear';
+            ripple.style.pointerEvents = 'none';
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+            
+            // Show alert
+            alert('Welkom bij het Futuristisch CreatieLab! 🚀✨\n\nHier zou normaal gesproken een aanmeldformulier openen.');
+        });
+        
+        // Add ripple animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
